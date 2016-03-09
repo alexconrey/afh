@@ -6,7 +6,7 @@ if [ ! -d "$DIR" ]; then
 	mkdir -p $DIR
 fi
 
-if [ -a /etc/bind/named.conf.blocked ]; then
+if [ -a /etc/bind/named.conf.trackers ]; then
 	rm /etc/bind/named.conf.trackers
 fi
 
