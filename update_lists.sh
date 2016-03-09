@@ -20,8 +20,10 @@ done
 
 for i in $(ls $DIR); do
 	for h in $(cat $DIR/$i | grep '127.0.0.1' | awk {'print $2'} | sort | uniq); do
-		echo 'zone "'"$h"'" { type master; notify no; file "'"$ZONEFILE"'"; };' >> /etc/bind/named.conf.blocked
+		echo 'zone "'"$h"'" { type master; notify no; file "'"$ZONEFILE"'"; };' >> /etc/bind/named.conf.blocked.tmp
 	done
 done
 
+cat /etc/bind/named.conf.blocked.tmp | egrep -v '_|localhost' | sort | uniq > /etc/bind/named.conf.blocked
+rm /etc/bind/named.conf.blocked.tmp
 service bind9 restart

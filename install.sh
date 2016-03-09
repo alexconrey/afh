@@ -1,6 +1,6 @@
 #!/bin/bash
 # Be sure to include /etc/bind/named.conf.blocked in /etc/bind/named.conf
-DIR="/opt/adblocker"
+DIR=$(pwd)
 CONFFILE="/etc/bind/named.conf.blocked"
 
 if [ ! -d "$DIR" ]; then
@@ -15,5 +15,5 @@ fi
 
 bash $DIR/update_lists.sh
 
-service bind restart
+service bind9 restart
 
