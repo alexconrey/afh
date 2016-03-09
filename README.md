@@ -1,5 +1,5 @@
 # afh
-AFH: Ad Free Home. Drop in place ad blocker using bind. 
+AFH: Ad Free Home. Drop in place ad/tracker blocker using bind. 
 
 Note: This does not do any destructive measures on existing files. This is meant to be an 'addon' to existing bind servers, however this will work as an initial installation.
 
