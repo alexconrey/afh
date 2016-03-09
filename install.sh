@@ -1,7 +1,6 @@
 #!/bin/bash
 # Be sure to include /etc/bind/named.conf.blocked in /etc/bind/named.conf
 DIR=$(pwd)
-CONFFILE="/etc/bind/named.conf.blocked"
 FILES=('/etc/bind/named.conf.blocked' '/etc/bind/named.conf.trackers')
 if [ ! -d "$DIR" ]; then
 	mkdir -p $DIR
